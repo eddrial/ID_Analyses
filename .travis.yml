@@ -3,6 +3,7 @@
 language: python
 
 install:
+    - pip install --user git+https://github.com/eddrial/ID_Tools
     - pip install pytest pytest-cov
     - pip install coveralls
 
