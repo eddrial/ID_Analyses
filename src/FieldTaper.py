@@ -1,5 +1,5 @@
 '''
-Created on 13 Jun 2016
+Created on 16 Jun 2016
 
 @author: gdy32713
 '''
@@ -8,14 +8,10 @@ import h5py
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-
-
-if __name__ == "__main__" :
-
+if __name__ == '__main__':
     f=h5py.File('U:\Mathematica\CPMUhybrid\CPMUplota1ideal.h5','r')
-    
-    
+        
+        
     s = np.array(f['s'])
     Bxfield = np.array(f['Bx'])
     Bsfield = np.array(f['Bs'])    
