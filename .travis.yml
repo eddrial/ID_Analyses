@@ -1,0 +1,9 @@
+# .travis.yml file
+
+language: python
+
+install:
+    - pip install pytest pytest-cov
+
+script:
+    - py.test --cov=src
