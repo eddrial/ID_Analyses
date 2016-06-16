@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
-    f=h5py.File('U:\Mathematica\CPMUhybrid\CPMUplota1ideal.h5','r')
+    f=h5py.File('..\Data\CPMUplota1ideal.h5','r')
         
         
     s = np.array(f['s'])
