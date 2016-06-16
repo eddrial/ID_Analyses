@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-      name="ID_Analyses",
+      name="src",
       author = "Ed Rial",
       version = "0.1",
       packages = find_packages(),
