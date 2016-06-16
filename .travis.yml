@@ -7,3 +7,6 @@ install:
 
 script:
     - py.test --cov=src
+
+after_success:
+     - coveralls
