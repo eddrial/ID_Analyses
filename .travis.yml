@@ -3,6 +3,7 @@
 language: python
 
 install:
+    - python setup.py install
     - pip install pytest pytest-cov
     - pip install coveralls
 
