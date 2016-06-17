@@ -4,7 +4,7 @@ Created on 16 Jun 2016
 @author: gdy32713
 '''
 import unittest
-import loadbfield as lb
+from id_analyses import loadbfield as lb
 
 
 class Test(unittest.TestCase):
