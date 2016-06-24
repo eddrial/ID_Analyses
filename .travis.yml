@@ -6,8 +6,11 @@ install:
     - pip install pytest pytest-cov
     - pip install coveralls
 
-script:
-    - py.test --cov=src
+install:
+  - python setup.py install
 
-after_success:
+script:
+    - py.test id_analyses/test/ -v --cov=id_analyses --cov-report term-missing
+
+after_script:
      - coveralls
