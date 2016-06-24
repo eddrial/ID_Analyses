@@ -4,7 +4,7 @@ setup(
       name="id_analyses",
       author = "Ed Rial",
       version = "0.1",
-      packages = find_packages(),
+      packages = ['id_analyses'],
       install_requires = ['numpy','h5py'],
       )
 #
