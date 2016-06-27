@@ -5,9 +5,7 @@ language: python
 install:
     - pip install pytest pytest-cov
     - pip install coveralls
-
-install:
-  - python setup.py install
+    - python setup.py install
 
 script:
     - py.test id_tools/test/ -v --cov=id_analyses --cov-report term-missing
