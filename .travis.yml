@@ -8,7 +8,7 @@ install:
     - python setup.py install
 
 script:
-    - py.test id_tools/test/ -v --cov=id_tools --cov-report term-missing
+    - py.test id_tools/test/ -v --cov=id_analyses --cov-report term-missing
 
 after_script:
     - coveralls
