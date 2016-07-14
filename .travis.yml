@@ -8,7 +8,7 @@ install:
     - python setup.py install
 
 script:
-    - py.test --cov=id_analyses
+    - py.test test --cov=id_analyses
 
 after_script:
     - coveralls
