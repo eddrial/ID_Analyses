@@ -10,7 +10,7 @@ class Test(unittest.TestCase):
 
 
     def testIsHDF5File(self):
-        f = lb.loadBFieldFromHDF5()
+        f = lb.loadBFieldFromHDF5('CPMUplota1ideal.h5')
         self.assertNotEqual(None, f, "File is not of the correct Type")
         #self.assertEqual('<HDF5 object reference>',f.ref,"File is not of the correct Type")
 
