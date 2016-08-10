@@ -15,10 +15,22 @@ class Test(unittest.TestCase):
         #self.assertEqual('<HDF5 object reference>',f.ref,"File is not of the correct Type")
         
     def testLoadedFileContainsBs(self):
-        pass
-
-
-
+        f = lb.loadBFieldFromHDF5('CPMUplota1ideal.h5')
+        self.assertIn('Bs', f.keys())
+        
+    def testLoadedFileContainsBx(self):
+        f = lb.loadBFieldFromHDF5('CPMUplota1ideal.h5')
+        self.assertIn('Bx', f.keys())
+        
+    def testLoadedFileContainsBz(self):
+        f = lb.loadBFieldFromHDF5('CPMUplota1ideal.h5')
+        self.assertIn('Bz', f.keys())
+        
+    def testLoadedFileContainss(self):
+        f = lb.loadBFieldFromHDF5('CPMUplota1ideal.h5')
+        self.assertIn('s', f.keys())
+        
+        
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testIsHDF5File']
     unittest.main()
