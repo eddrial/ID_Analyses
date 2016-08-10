@@ -15,8 +15,3 @@ def loadBFieldFromHDF5(name):
     f=h5py.File(filepath,'r')
     
     return f
-
-if __name__ == '__main__':
-    a = loadBFieldFromHDF5('CPMUplota1ideal.h5')
-    
-    b = 2+2
