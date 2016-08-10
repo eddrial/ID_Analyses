@@ -27,4 +27,20 @@ def copyOnePeriod(data):
     periodicity = findPeakPeriodicity(data[:,2])
     duplicatesection = data[(len(data)-1)/2:((len(data)-1)/2+periodicity)]
     return duplicatesection
+
+def insertOnePeriod(data):
+    duplicated_data = copyOnePeriod(data)
+    extended_data = np.insert(data,(len(data)-1)/2,duplicated_data, 0)
+    sstep = data[1,0]-data[0,0]
+    extended_data[0,0] = extended_data[0,0]-len(duplicated_data)*sstep
+    for i in np.arange(len(extended_data)-1):
+        extended_data[i+1,0] = extended_data[i,0]+sstep
+    return extended_data
+
+def insertNPeriods(data,n):
+    extended_data = data
+    for n in np.arange(n):
+        extended_data = insertOnePeriod(extended_data)
+    return extended_data
+        
     
