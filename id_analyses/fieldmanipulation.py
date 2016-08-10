@@ -11,5 +11,10 @@ import numpy as np
 def maxOfData(data):
     return max(data)
 
-if __name__ == '__main__':
-    pass
+def findPeakIndices(data):
+    return [i for i, x in enumerate(data) if x > 0.97*maxOfData(data)]
+
+def findPeakPeriodicity(data):
+    peakIndices = findPeakIndices(data)
+    return peakIndices[1]-peakIndices[0]
+    
