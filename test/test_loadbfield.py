@@ -13,6 +13,9 @@ class Test(unittest.TestCase):
         f = lb.loadBFieldFromHDF5('CPMUplota1ideal.h5')
         self.assertNotEqual(None, f, "File is not of the correct Type")
         #self.assertEqual('<HDF5 object reference>',f.ref,"File is not of the correct Type")
+        
+    def testLoadedFileContainsBs(self):
+        pass
 
 
 
