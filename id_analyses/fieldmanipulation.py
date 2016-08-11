@@ -32,9 +32,10 @@ def insertOnePeriod(data):
     duplicated_data = copyOnePeriod(data)
     extended_data = np.insert(data,(len(data)-1)/2,duplicated_data, 0)
     sstep = data[1,0]-data[0,0]
-    extended_data[0,0] = extended_data[0,0]-len(duplicated_data)*sstep
-    for i in np.arange(len(extended_data)-1):
-        extended_data[i+1,0] = extended_data[i,0]+sstep
+    extended_data[0,0] = data[0,0]-(len(duplicated_data)*sstep)/2
+    news00 = data[0,0]-(sstep*len(duplicated_data)/2)
+    news = np.arange(news00, -news00, sstep)
+    extended_data[:,0] = news[:]
     return extended_data
 
 def insertNPeriods(data,n):

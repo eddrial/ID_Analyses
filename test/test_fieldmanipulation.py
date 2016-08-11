@@ -57,6 +57,10 @@ class Test(unittest.TestCase):
     def testMultipleIncreases(self, data = B_Array, n=17):
         extended_B_Array = fm.insertNPeriods(data, n)
         self.assertEqual(len(extended_B_Array), len(data)+n*20)
+        
+    def testMultipleIncreasesHandlesSCorrectly(self, data = B_Array, n=107):
+        extended_B_Array = fm.insertNPeriods(data, n)
+        self.assertAlmostEqual(-extended_B_Array[-1,0], extended_B_Array[0,0], delta = 0.00001)
     
     def testSStepIsRegular(self, data = B_Array):
         extended_B_Array = fm.insertOnePeriod(data)
@@ -66,8 +70,11 @@ class Test(unittest.TestCase):
             
     def testSStartAfterInsertion(self, data = B_Array):
         extended_B_Array = fm.insertOnePeriod(data)
-        sstep = data[1,0]-data[0,0]
-        self.assertAlmostEqual(-360.8, (data[0,0])-(10*sstep),delta = 0.001)
+        self.assertAlmostEqual(-360.8, extended_B_Array[0,0],delta = 0.001)
+        
+    def testSstartisminusSendAfterInsertion(self, data = B_Array):
+        extended_B_Array = fm.insertOnePeriod(data)
+        self.assertAlmostEqual(-extended_B_Array[-1,0], extended_B_Array[0,0],delta = 0.001)
 
 
 if __name__ == "__main__":
