@@ -17,14 +17,14 @@ def defineMachineProperties(energy = 3.0, c = 2.9911124e8, mass = 0.511e-3):
 
 def fieldPhaseError(BField):
     
-    nperiods = len(fm.findPeakIndices(BField))/2
+    nperiods = len(fm.findPeakIndices(BField[:,2]))
     step = BField[1,0]-BField[0,0]
-    n_step = fm.findPeakPeriodicity(BField)
-    n_s_stp = len(BField)
+    n_step = fm.findPeakPeriodicity(BField[:,2])
+    n_s_stp = n_step*nperiods
     
     
     
-    phaseError =1 
+    phaseError = 1 
     
     return phaseError
 
