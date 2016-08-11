@@ -20,8 +20,9 @@ class Test(unittest.TestCase):
         machineProperties = fp.defineMachineProperties()
         self.assertEqual(machineProperties[0:4], (3.0, 0.0001, 2.9911124e8, 0.511e-3))
         
-    
-        
+    def testPhaseErrorIsFloat(self, bfield = long_B_Array):
+        a = fp.fieldPhaseError(bfield)
+        self.assertIs(a,1)
         
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
