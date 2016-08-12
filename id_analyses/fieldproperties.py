@@ -84,7 +84,7 @@ def fieldPhaseError(BField):
     
     pherr=np.sqrt(pherr/(4*nperiods+1-2*nskip))*360.0/(2.0*np.pi)
     plt.plot(BField[:,0], trajectories[:,0])
-    plt.plot()
+    plt.show()
     return (pherr, trajectories)
 
 
