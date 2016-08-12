@@ -6,6 +6,7 @@ dependencies:
   - pytest
   - h5py
   - pytest
+  - matplotlib
   - pip:
     - pytest-cov
     - coveralls
