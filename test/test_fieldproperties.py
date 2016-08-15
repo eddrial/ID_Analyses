@@ -14,7 +14,7 @@ class Test(unittest.TestCase):
 
     testfile = lb.loadBFieldFromHDF5('CPMUplota1ideal.h5')
     B_Array = fm.makeDataNumpyArray(testfile)
-    long_B_Array = fm.insertNPeriods(B_Array, 98)
+    long_B_Array = fm.insertNPeriods(B_Array, 10)
 
     def testDefaultMachineProperties(self):
         machineProperties = fp.defineMachineProperties()
@@ -22,7 +22,8 @@ class Test(unittest.TestCase):
         
     def testPhaseErrorIsFloat(self, bfield = long_B_Array):
         (a,b) = fp.fieldPhaseError(bfield)
-        self.assertLess(a,100.0)
+        self.assertLess(a,0.09)
+
         
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
